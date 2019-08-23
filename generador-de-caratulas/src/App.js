@@ -1,12 +1,13 @@
 import React from "react";
 
+import EditForm from "./containers/EditForm/EditForm";
+import ResultView from "./containers/ResultView/ResultView";
+
 function App() {
   return (
     <div>
-      generador de ¿? empecemos!!!{" "}
-      <span role="img" aria-label="face">
-        🤩
-      </span>
+      <EditForm />
+      <ResultView />
     </div>
   );
 }
