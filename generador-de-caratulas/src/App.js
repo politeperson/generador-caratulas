@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       <EditForm />
-      <ResultView />
+      {/* <ResultView /> */}
     </div>
   );
 }

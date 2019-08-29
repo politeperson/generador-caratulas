@@ -1,7 +1,9 @@
 import React from "react";
 
 const Caratula = props => {
-  return <div>la caratula</div>;
+  console.log(props.data);
+
+  return <div></div>;
 };
 
 export default Caratula;
