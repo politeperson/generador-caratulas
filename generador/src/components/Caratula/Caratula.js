@@ -22,7 +22,7 @@ const Caratula = props => {
   }
 
   return (
-    <div className="col s6">
+    <div className="col s12 m6">
       <div className="row">
         <div className="col s12 right-align">
           <img className="responsive-img" src={logo} alt="logo" />

@@ -9,6 +9,8 @@ import Curso from "../../components/Curso/Curso";
 import Alumnos from "../../components/Alumnos/Alumnos";
 import Anio from "../../components/Anio/Anio";
 import Semestre from "../../components/Semestre/Semestre";
+import Navbar from "../../components/UI/Navbar/Navbar";
+import Footer from "../../components/UI/Footer/Footer";
 import Logo from "../../assets/images/encodedLogo";
 import "./EditForm.css";
 
@@ -340,18 +342,18 @@ class EditForm extends React.Component {
               ? '"El alumno declara haber realizado el presente trabajo de acuerdo a las normas de la Universidad Católica San Pablo"'
               : '"Los alumnos declaran haber realizado el presente trabajo de acuerdo a las normas de la Universidad Católica San Pablo"',
           style: "footer",
-          margin: [0, 98 - 8 * data.alumnos.length, 0, 0]
+          margin: [0, 130 - 8 * data.alumnos.length, 0, 0]
         },
         {
           // máximo 4 columnas
-          text: lines.join(" "),
+          text: lines.join("   "),
           style: "footer",
           margin: [0, 20, 0, 0]
         },
         {
           text: data.alumnos.length > 1 ? "Firmas" : "Firma",
           style: "footer",
-          margin: [0, 10, 0, 0]
+          margin: [0, 20, 0, 0]
         }
       ],
       styles: {
@@ -402,53 +404,59 @@ class EditForm extends React.Component {
     */
     let caratula = this.caratulaGenerator(this.state.editForm);
     return (
-      <div className="row">
-        <form onSubmit={e => e.preventDefault()} className="col s6">
-          <UcspCarreras changed={this.changeFormHandler} />
+      <React.Fragment>
+        <Navbar />
+        <br></br>
+        <div className="row">
+          <form onSubmit={e => e.preventDefault()} className="col s12 m6">
+            <UcspCarreras changed={this.changeFormHandler} />
 
-          <Titulo
-            titulo={this.state.editForm.titulo}
-            changed={this.changeFormHandler.bind(this, "titulo")}
-          />
+            <Titulo
+              titulo={this.state.editForm.titulo}
+              changed={this.changeFormHandler.bind(this, "titulo")}
+            />
 
-          <Curso
-            curso={this.state.editForm.curso}
-            changed={this.changeFormHandler.bind(this, "curso")}
-          />
+            <Curso
+              curso={this.state.editForm.curso}
+              changed={this.changeFormHandler.bind(this, "curso")}
+            />
 
-          <Alumnos
-            lista={this.state.editForm.alumnos.lista}
-            cantidad={this.state.editForm.alumnos.cantidad}
-            changed={this.changeAlumnosHandler}
-            changeSex={this.maleFemalechecker}
-            deleteStudent={this.deleteStudent}
-            addStudent={this.addStudent}
-            errorMessage={this.state.editForm.alumnos.errorMessage}
-            sex={this.state.editForm.alumnos.male}
-          />
+            <Alumnos
+              lista={this.state.editForm.alumnos.lista}
+              cantidad={this.state.editForm.alumnos.cantidad}
+              changed={this.changeAlumnosHandler}
+              changeSex={this.maleFemalechecker}
+              deleteStudent={this.deleteStudent}
+              addStudent={this.addStudent}
+              errorMessage={this.state.editForm.alumnos.errorMessage}
+              sex={this.state.editForm.alumnos.male}
+            />
 
-          <Anio
-            anio={this.state.editForm.anio}
-            changed={this.changeFormHandler.bind(this, "anio")}
-          />
+            <Anio
+              anio={this.state.editForm.anio}
+              changed={this.changeFormHandler.bind(this, "anio")}
+            />
 
-          <Semestre
-            semestre={this.state.editForm.semestre}
-            changed={this.changeFormHandler.bind(this, "semestre")}
-          />
-
-          <button
-            className="btn waves-effect waves-light light-blue lighten-2 tooltipped"
-            data-position="top"
-            data-tooltip="🔔 Verifica la carátula antes de generarla!"
-            onClick={this.printFormHandler}
-          >
-            Generar
-            <i className="material-icons right">insert_drive_file</i>
-          </button>
-        </form>
-        <Caratula datos={caratula} />
-      </div>
+            <Semestre
+              semestre={this.state.editForm.semestre}
+              changed={this.changeFormHandler.bind(this, "semestre")}
+            />
+            <div className="row center-align">
+              <button
+                className="btn waves-effect waves-light light-blue lighten-2 tooltipped"
+                data-position="top"
+                data-tooltip="🔔 Verifica la carátula antes de generarla!"
+                onClick={this.printFormHandler}
+              >
+                <b>GENERAR CARÁTULA</b>
+                <i className="material-icons right">insert_drive_file</i>
+              </button>
+            </div>
+          </form>
+          <Caratula datos={caratula} />
+        </div>
+        <Footer />
+      </React.Fragment>
     );
   }
 }

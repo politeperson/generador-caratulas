@@ -10,3 +10,12 @@
     border-bottom: 2px solid #90caf9 !important;
     box-shadow: 0 1px 0 0 #90caf9 !important
 }
+
+ul.dropdown-content.select-dropdown li span {
+    color: #3949ab;
+}
+
+.optgroup span {
+    background-color: #e0e0e0;
+    font-weight: bold;
+}
