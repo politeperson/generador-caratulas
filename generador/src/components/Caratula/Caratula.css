@@ -1,0 +1,7 @@
+.caratula {
+    background-color: rgb(38, 38, 38);
+    height: 100vmin;
+    width: 100%;
+    overflow: auto;
+    margin: 5px;
+}

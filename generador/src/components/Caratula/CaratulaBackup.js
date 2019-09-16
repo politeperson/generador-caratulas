@@ -60,7 +60,7 @@ const Caratula = props => {
           }
         />
       </div>
-      <div className="row center-align">
+      <div className="row">
         <div className="col s12 center-align">
           {[...alumnos].map((el, i) =>
             i !== 3 ? (
@@ -73,7 +73,6 @@ const Caratula = props => {
             )
           )}
         </div>
-        <br></br>
         <div
           className="col s12 center-align"
           children={alumnos.length > 1 ? "Firmas" : "Firma"}
