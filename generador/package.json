@@ -1,8 +1,10 @@
 {
-  "name": "generador-de-caratulas",
+  "name": "generador",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "materialize-css": "^1.0.0",
+    "pdfmake": "^0.1.59",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-scripts": "3.1.1"
@@ -27,5 +29,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {}
 }

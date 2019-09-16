@@ -1,0 +1,15 @@
+.alumno::-webkit-input-placeholder {
+    font-weight: bold;
+}
+
+.alumno::-moz-placeholder {
+    font-weight: bold;
+}
+
+.alumno:-ms-input-placeholder {
+    font-weight: bold;
+}
+
+.alumno:-o-input-placeholder {
+    font-weight: bold;
+}
